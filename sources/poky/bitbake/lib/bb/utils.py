@@ -970,6 +970,30 @@ def contains_any(variable, checkvalues, truevalue, falsevalue, d):
 def cpu_count():
     return multiprocessing.cpu_count()
 
+def filter(variable, checkvalues, d):
+    """Return all words in the variable that are present in the checkvalues.
+
+    Arguments:
+
+    variable -- the variable name. This will be fetched and expanded (using
+    d.getVar(variable)) and then split into a set().
+
+    checkvalues -- if this is a string it is split on whitespace into a set(),
+    otherwise coerced directly into a set().
+
+    d -- the data store.
+    """
+
+    val = d.getVar(variable,True)
+    if not val:
+        return ''
+    val = set(val.split())
+    if isinstance(checkvalues, str):
+        checkvalues = set(checkvalues.split())
+    else:
+        checkvalues = set(checkvalues)
+    return ' '.join(sorted(checkvalues & val))
+
 def nonblockingfd(fd):
     fcntl.fcntl(fd, fcntl.F_SETFL, fcntl.fcntl(fd, fcntl.F_GETFL) | os.O_NONBLOCK)
 

@@ -9,7 +9,7 @@ PACKAGES = "${PN}-dbg ${PN} ${PN}-doc ${PN}-dev ${PN}-staticdev ${PN}-locale"
 PACKAGES_DYNAMIC = "${PN}-locale-*"
 
 
-SRCREV = "4527ebf0a9b51bd58ede55ea50b04ae77857753a"
+SRCREV = "d6fd463818eef5902017b5570de24d7e453639ab"
 SRC_URI = "  \
             git://github.com/hufan/web-demo-bb;protocol=https;branch=web_server"
 			
@@ -22,13 +22,14 @@ do_compile () {
  make
 }
 
+
 do_install () {
       install -d ${D}/usr/share/myir/
       install -d ${D}/usr/share/myir/www/
-      install -d ${D}/lib/
+      install -d ${D}/usr/lib/
       install -d ${D}/usr/bin/
       	  
-      cp -S ${S}/*.so* ${D}/lib/
+      cp -S ${S}/*.so* ${D}/usr/lib/
       cp -r ${S}/web_server/* ${D}/usr/share/myir/www/
 
       if [ ${MACHINE} = "myd-y6ul14x14" ]
@@ -56,7 +57,7 @@ FILES_${PN} = "/home/myir/ \
 	       /usr/share/myir/www/ \
 	       /usr/share/myir/www/* \
 	       /usr/share/myir/*/* \
-	       /lib/ \
+	       /usr/lib/ \
 	       /usr/bin/ \
              "
 

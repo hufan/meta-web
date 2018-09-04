@@ -4,8 +4,11 @@ inherit populate_sdk_qt5
 
 require recipes-fsl/images/fsl-image-qt5-validation-imx.bb
 
+IMAGE_FEATURES += "package-management ssh-server-dropbear "
+
 IMAGE_INSTALL += " \
     imx-kobs \
+    tslib \
     tslib-calibrate \
     tslib-conf \
     tslib-tests \
@@ -33,7 +36,9 @@ IMAGE_INSTALL += " \
     ppp \
     ppp-quectel \
     sqlite3 \
+    libmodbus \
     libxml2 \
+    dbus \
     python-lxml \
     python-certifi \
     python-simplejson \
@@ -43,5 +48,8 @@ IMAGE_INSTALL += " \
     python-tornado \
     web-demo \
     qt-demo \
-    libsocketcan \
+    opencv \
+    iptables \
+    ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
+    ${@base_contains("MACHINE", "mys6ull14x14", "hostapd", "", d)} \
     myir-rc-local"

@@ -336,6 +336,8 @@ do_validate_branches() {
 
 	machine_branch="${@ get_machine_branch(d, "${KBRANCH}" )}"
 	machine_srcrev="${SRCREV_machine}"
+        ehco $machine_branch > /home/hufan/ttt12.txt
+        ehco $machine_srcrev > /home/hufan/ttt1211.txt
 
 	# if SRCREV is AUTOREV it shows up as AUTOINC there's nothing to
 	# check and we can exit early
