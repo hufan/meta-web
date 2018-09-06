@@ -34,4 +34,7 @@ IMAGE_INSTALL += "imx-kobs \
     python-pyconnman \
     python-tornado \
     ppp-quectel \
+    hostapd \
+    iptables \
+    wifi-conf \
     myir-rc-local"

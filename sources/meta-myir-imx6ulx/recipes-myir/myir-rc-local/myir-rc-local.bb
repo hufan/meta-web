@@ -22,3 +22,4 @@ do_install () {
     install -m 755 ${S}/rc.local.init ${D}/${sysconfdir}/init.d/rc.local
 }
 
+FILES_${PN} = " /etc/ "

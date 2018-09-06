@@ -49,7 +49,8 @@ IMAGE_INSTALL += " \
     web-demo \
     qt-demo \
     opencv \
+    hostapd \ 
     iptables \
+    wifi-conf \ 
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
-    ${@base_contains("MACHINE", "mys6ull14x14", "hostapd", "", d)} \
     myir-rc-local"
