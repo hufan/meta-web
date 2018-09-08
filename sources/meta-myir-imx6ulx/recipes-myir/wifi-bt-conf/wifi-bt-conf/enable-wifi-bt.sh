@@ -1,8 +1,9 @@
-#/bin/sh
+#!/bin/bash
 
 RFKILL_SYSFS_PTAH="/sys/class/rfkill"
 RFKILL_T="rfkill"
 T_HCI="hci0"
+T_WIFI="phy0"
 
 for i in $(seq 0 4)
 do 
@@ -18,8 +19,17 @@ do
 	fi
 done
 
-#kill -9 ` ps -A | grep "wpa_supplicant"| awk '{print $1}' `
-killall wpa_supplicant
+kill_wpa_fun(){
+  PRO_NAME="wpa_supplicant"
+  NUM=` ps aux | grep -w ${PRO_NAME} | grep -v grep |wc -l `
+  if [ $NUM -gt 0 ]
+  then
+  	killall wpa_supplicant
+  fi
+}
+
+
+kill_wpa_fun
 if [ -d $RFKILL_SYSFS_PTAH ]; then
 	# echo " enable wifi & bt control"
 	for i in $(seq 0 4)
@@ -29,9 +39,9 @@ if [ -d $RFKILL_SYSFS_PTAH ]; then
 		if [ -d $PATH_TEMP ]; then
 			temp_name=` cat ${RFKILL_SYSFS_PTAH}"/"${RFKILL_T}${i}"/name" `
 			#echo ${temp_name}
-			if [ "phy0" == ${temp_name} ]; then
+			if [ $T_WIFI == ${temp_name} ]; then
 				echo 1 >  ${PATH_TEMP}"/state"
-			elif [ "hci0" == ${temp_name} ]; then
+			elif [ $T_HCI == ${temp_name} ]; then
 				echo 1 >  ${PATH_TEMP}"/state"
 			else
 				echo "empty"
@@ -39,4 +49,4 @@ if [ -d $RFKILL_SYSFS_PTAH ]; then
 		fi
 	done
 fi
-killall wpa_supplicant
+kill_wpa_fun
