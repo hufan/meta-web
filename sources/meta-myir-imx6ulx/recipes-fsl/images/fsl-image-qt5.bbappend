@@ -39,6 +39,7 @@ IMAGE_INSTALL += " \
     libmodbus \
     libxml2 \
     dbus \
+    openobex \
     python-lxml \
     python-certifi \
     python-simplejson \
@@ -48,9 +49,9 @@ IMAGE_INSTALL += " \
     python-tornado \
     web-demo \
     qt-demo \
-    opencv \
     hostapd \ 
     iptables \
-    wifi-conf \ 
+    wifi-bt-conf \ 
+    openobex \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
     myir-rc-local"

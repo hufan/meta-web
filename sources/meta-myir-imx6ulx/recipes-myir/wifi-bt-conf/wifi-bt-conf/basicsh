@@ -1,0 +1,10 @@
+#!/bin/bash
+
+kill_process_fun(){
+  PRO_NAME=$1
+  NUM=` ps aux | grep -w ${PRO_NAME} | grep -v grep |wc -l `
+  if [ $NUM -gt 0 ]
+  then
+  	killall ${PRO_NAME}
+  fi
+}

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /etc/wifi-conf/basicsh
+
 RFKILL_SYSFS_PTAH="/sys/class/rfkill"
 RFKILL_T="rfkill"
 T_HCI="hci0"
@@ -13,23 +15,16 @@ do
 		#echo ${temp_name}
 		if [ $T_HCI != ${temp_name} ]; then
 			hciattach /dev/ttymxc2 any 115200 -t120 flow
+			/usr/libexec/bluetooth/bluetoothd &
 			# sleep 3
 			#echo 1 >  ${PATH_TEMP}"/state"
 		fi 
 	fi
 done
 
-kill_wpa_fun(){
-  PRO_NAME="wpa_supplicant"
-  NUM=` ps aux | grep -w ${PRO_NAME} | grep -v grep |wc -l `
-  if [ $NUM -gt 0 ]
-  then
-  	killall wpa_supplicant
-  fi
-}
 
-
-kill_wpa_fun
+PRO_NAME="wpa_supplicant"
+kill_process_fun ${PRO_NAME}
 if [ -d $RFKILL_SYSFS_PTAH ]; then
 	# echo " enable wifi & bt control"
 	for i in $(seq 0 4)
@@ -44,9 +39,9 @@ if [ -d $RFKILL_SYSFS_PTAH ]; then
 			elif [ $T_HCI == ${temp_name} ]; then
 				echo 1 >  ${PATH_TEMP}"/state"
 			else
-				echo "empty"
+				echo " "
 			fi 
 		fi
 	done
 fi
-kill_wpa_fun
+kill_process_fun ${PRO_NAME}

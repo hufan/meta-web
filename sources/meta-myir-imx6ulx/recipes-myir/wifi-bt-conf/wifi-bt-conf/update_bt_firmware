@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source /etc/wifi-conf/enable-wifi-bt
+PATH_FIRMWATE="/lib/firmware/bcmd/bcm43438a1.hcd"
+BT_UART="/dev/ttymxc2"
+BT_BAUDRATE="3000000"
+FLAGS="--enable_lpm --enable_hci --no2bytes"
+PRO_NAME="hciattach"
+kill_process_fun $PRO_NAME
+
+sleep 1
+brcm_patchram_plus --patchram $PATH_FIRMWATE --baudrate $BT_BAUDRATE $FLAGS $BT_UART -d

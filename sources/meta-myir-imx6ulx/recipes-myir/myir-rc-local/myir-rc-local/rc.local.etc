@@ -10,7 +10,7 @@
 # bits.
 #
 # By default this script does nothing.
-/etc/enable-wifi-bt.sh &
+/etc/wifi-conf/enable-wifi-bt &
 
 export TSLIB_TSDEVICE=/dev/input/event1
 #ts_calibrate && ts_test &
