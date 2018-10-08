@@ -8,7 +8,7 @@ SRC_URI = "file://hostapd.conf \
 	   file://udhcpd.conf \
            file://ifup_wifi_ap \
            file://enable-wifi-bt \
-	   file://ifup_wifi_sta.sh \
+	   file://ifup_wifi_sta \
 	   file://update_bt_firmware \
 	   file://basicsh \
 	   file://WIFI.CONF \
@@ -31,7 +31,7 @@ do_install () {
 	install -m 755 ${S}/WIFI.CONF  ${D}/${sysconfdir}/wifi-conf/
 	install -m 755 ${S}/basicsh   ${D}/${sysconfdir}/wifi-conf/
 	install -m 755 ${S}/update_bt_firmware  ${D}/${sysconfdir}/wifi-conf/
-	install -m 755 ${S}/ifup_wifi_sta.sh  ${D}/${sysconfdir}/wifi-conf/
+	install -m 755 ${S}/ifup_wifi_sta  ${D}/${sysconfdir}/wifi-conf/
 }
 
 FILES_${PN} = " ${sysconfdir}/ \
