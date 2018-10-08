@@ -10,11 +10,12 @@
 # bits.
 #
 # By default this script does nothing.
-/etc/wifi-conf/enable-wifi-bt &
+enable-wifi-bt &
+#
 
+
+# demo start 
 export TSLIB_TSDEVICE=/dev/input/event1
-#ts_calibrate && ts_test &
-
 #ts_calibrate && ts_test &
 python /usr/share/myir/init_boardcfg.py &
 

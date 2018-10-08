@@ -9,7 +9,7 @@ PACKAGES = "${PN}-dbg ${PN} ${PN}-doc ${PN}-dev ${PN}-staticdev ${PN}-locale"
 PACKAGES_DYNAMIC = "${PN}-locale-*"
 
 
-SRCREV = "d6fd463818eef5902017b5570de24d7e453639ab"
+SRCREV = "47a3d6d978bd77495fd876ae53a80aab3acc05ea"
 SRC_URI = "  \
             git://github.com/hufan/web-demo-bb;protocol=https;branch=web_server"
 			
@@ -35,21 +35,26 @@ do_install () {
       if [ ${MACHINE} = "myd-y6ul14x14" ]
       then
       install -m 0755 ${S}/board_cfg_mydy6ul.json ${D}/usr/share/myir/board_cfg.json
+      install -m 0755 ${S}/board_cfg_mydy6ul.json ${D}/usr/share/board_cfg.json
       elif [ ${MACHINE} = "myd-y6ull14x14" ]
       then
       install -m 0755 ${S}/board_cfg_mydy6ull.json ${D}/usr/share/myir/board_cfg.json
+      install -m 0755 ${S}/board_cfg_mydy6ull.json ${D}/usr/share/board_cfg.json
       elif [ ${MACHINE} = "mys6ul14x14" ]
       then
       install -m 0755 ${S}/board_cfg_mysy6ul.json ${D}/usr/share/myir/board_cfg.json
+      install -m 0755 ${S}/board_cfg_mysy6ul.json ${D}/usr/share/board_cfg.json
       elif [ ${MACHINE} = "mys6ull14x14" ]
       then
       install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/myir/board_cfg.json
+      install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/board_cfg.json
       fi
 
       install -m 0755 ${S}/mxde.xml ${D}/usr/share/myir/
       install -m 0755 ${S}/settings.ini ${D}/usr/share/myir/
       install -m 0755 ${S}/psplash ${D}/usr/bin/
       install -m 755 ${S}/init_boardcfg.py ${D}/usr/share/myir/
+      install -m 755 ${S}/v4l2grab ${D}/usr/bin/
 }
 
 FILES_${PN} = "/home/myir/ \

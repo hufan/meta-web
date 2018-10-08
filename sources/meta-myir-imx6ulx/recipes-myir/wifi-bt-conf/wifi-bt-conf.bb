@@ -11,23 +11,24 @@ SRC_URI = "file://hostapd.conf \
 	   file://ifup_wifi_sta.sh \
 	   file://update_bt_firmware \
 	   file://basicsh \
+	   file://WIFI.CONF \
            file://LICENSE \
-		   file://v4l2grab.tar.bz2 \
            "
 		   
 S = "${WORKDIR}"
 
-
 do_install () {
+        
         install -d ${D}/${sysconfdir}/init.d
-	install -d ${D}/${sysconfdir}/wifi-conf
+        install -d ${D}/usr/bin/
 	install -d ${D}/${sysconfdir}/wifi-conf
         
 	install -m 755 ${S}/hostapd.conf  ${D}/${sysconfdir}/wifi-conf/
         install -m 755 ${S}/udhcpd.conf  ${D}/${sysconfdir}/wifi-conf/
 	
-        install -m 755 ${S}/enable-wifi-bt  ${D}/${sysconfdir}/wifi-conf/
+        install -m 755 ${S}/enable-wifi-bt  ${D}/usr/bin/
 	install -m 755 ${S}/ifup_wifi_ap  ${D}/${sysconfdir}/wifi-conf/
+	install -m 755 ${S}/WIFI.CONF  ${D}/${sysconfdir}/wifi-conf/
 	install -m 755 ${S}/basicsh   ${D}/${sysconfdir}/wifi-conf/
 	install -m 755 ${S}/update_bt_firmware  ${D}/${sysconfdir}/wifi-conf/
 	install -m 755 ${S}/ifup_wifi_sta.sh  ${D}/${sysconfdir}/wifi-conf/
@@ -35,5 +36,5 @@ do_install () {
 
 FILES_${PN} = " ${sysconfdir}/ \
 		${sysconfdir}/wifi-conf \
+		/usr/bin/ \
 	      "
-
