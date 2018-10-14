@@ -7,7 +7,7 @@ PR = "r0"
 
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-SRCREV = "d4f840a25f1975bd6633f207ae0aa2d174cbeb15"
+SRCREV = "b8d9ae6e075f762a33d089b310135ce076b9c56f"
 SRC_URI = " \ 
 	    git://github.com/hufan/web-demo-bb;protocol=https;branch=qt-app \
           "

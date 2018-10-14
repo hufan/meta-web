@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=309cc7bace8769cfabdd34577f654f8e"
 SRC_URI = "file://hostapd.conf \
 	   file://udhcpd.conf \
            file://ifup_wifi_ap \
-           file://enable-wifi-bt \
+           file://up-wifi-bt \
 	   file://ifup_wifi_sta \
 	   file://update_bt_firmware \
 	   file://basicsh \
@@ -26,7 +26,7 @@ do_install () {
 	install -m 755 ${S}/hostapd.conf  ${D}/${sysconfdir}/wifi-conf/
         install -m 755 ${S}/udhcpd.conf  ${D}/${sysconfdir}/wifi-conf/
 	
-        install -m 755 ${S}/enable-wifi-bt  ${D}/usr/bin/
+        install -m 755 ${S}/up-wifi-bt  ${D}/usr/bin/
 	install -m 755 ${S}/ifup_wifi_ap  ${D}/${sysconfdir}/wifi-conf/
 	install -m 755 ${S}/WIFI.CONF  ${D}/${sysconfdir}/wifi-conf/
 	install -m 755 ${S}/basicsh   ${D}/${sysconfdir}/wifi-conf/

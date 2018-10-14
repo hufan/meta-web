@@ -10,9 +10,6 @@
 # bits.
 #
 # By default this script does nothing.
-enable-wifi-bt &
-#
-
 
 # demo start 
 export TSLIB_TSDEVICE=/dev/input/event1

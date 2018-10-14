@@ -6,22 +6,27 @@ RFKILL_SYSFS_PTAH="/sys/class/rfkill"
 RFKILL_T="rfkill"
 T_HCI="hci0"
 T_WIFI="phy0"
-
+TIM_CNT=0
 for i in $(seq 0 4)
 do 
 	PATH_TEMP=${RFKILL_SYSFS_PTAH}"/"${RFKILL_T}${i}
 	if [ -d $PATH_TEMP ]; then
 		temp_name=` cat ${RFKILL_SYSFS_PTAH}"/"${RFKILL_T}${i}"/name" `
 		#echo ${temp_name}
-		if [ $T_HCI != ${temp_name} ]; then
-			hciattach /dev/ttymxc2 any 115200 -t120 flow
-			/usr/libexec/bluetooth/bluetoothd &
-			# sleep 3
-			#echo 1 >  ${PATH_TEMP}"/state"
+		if [ $T_HCI == ${temp_name} ]; then
+			let TIM_CNT+=1;
 		fi 
 	fi
 done
 
+if [ $TIM_CNT -eq 0 ];
+  then
+	hciattach /dev/ttymxc2 any 115200 -t120 flow
+	/usr/libexec/bluetooth/bluetoothd &
+else
+    echo " "
+fi
+sleep 3
 
 PRO_NAME="wpa_supplicant"
 kill_process_fun ${PRO_NAME}
@@ -44,4 +49,5 @@ if [ -d $RFKILL_SYSFS_PTAH ]; then
 		fi
 	done
 fi
+rfkill unblock all
 kill_process_fun ${PRO_NAME}

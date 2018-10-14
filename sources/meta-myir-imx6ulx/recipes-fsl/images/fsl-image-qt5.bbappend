@@ -12,6 +12,7 @@ IMAGE_INSTALL += " \
     tslib-calibrate \
     tslib-conf \
     tslib-tests \
+    memtester \
     bzip2 \
     gzip \
     canutils \

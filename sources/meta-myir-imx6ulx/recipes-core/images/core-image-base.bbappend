@@ -27,14 +27,8 @@ IMAGE_INSTALL += "imx-kobs \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
     alsa-utils \
     ppp \
-    python-certifi \
-    python-simplejson \
-    python-singledispatch \
-    python-backports-abc \
-    python-pyconnman \
-    python-tornado \
     ppp-quectel \
     hostapd \
     iptables \
-    wifi-conf \
+    wifi-bt-conf \
     myir-rc-local"
