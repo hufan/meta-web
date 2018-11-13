@@ -29,6 +29,8 @@ IMAGE_INSTALL += "imx-kobs \
     ppp \
     ppp-quectel \
     hostapd \
+    sqlite3 \
+    libmodbus \
     iptables \
     wifi-bt-conf \
     myir-rc-local"

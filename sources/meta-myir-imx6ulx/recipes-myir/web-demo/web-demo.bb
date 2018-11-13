@@ -49,6 +49,10 @@ do_install () {
       then
       install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/myir/board_cfg.json
       install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/board_cfg.json
+      elif [ ${MACHINE} = "myd-y6ull-rhmi" ]
+      then
+      install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/myir/board_cfg.json
+      install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/board_cfg.json
       fi
 
       install -m 0755 ${S}/mxde.xml ${D}/usr/share/myir/
