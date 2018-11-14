@@ -32,5 +32,6 @@ IMAGE_INSTALL += "imx-kobs \
     sqlite3 \
     libmodbus \
     iptables \
+    vsftpd \
     wifi-bt-conf \
     myir-rc-local"

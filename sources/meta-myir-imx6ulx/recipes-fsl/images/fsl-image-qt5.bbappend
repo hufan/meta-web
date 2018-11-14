@@ -52,6 +52,7 @@ IMAGE_INSTALL += " \
     qt-demo \
     hostapd \ 
     iptables \
+    vsftpd \ 
     wifi-bt-conf \ 
     openobex \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
