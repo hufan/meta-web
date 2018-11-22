@@ -10,7 +10,7 @@ PACKAGES_DYNAMIC = "${PN}-locale-*"
 
 
 SRCREV = "cf8e678dc6d03efc1381a5dd0d2c70c4a0a74de4"
-I = "  \
+SRC_URI = "  \
             git://github.com/hufan/web-demo-bb;protocol=https;branch=web_server"
 			
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -51,8 +51,8 @@ do_install () {
       install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/board_cfg.json
       elif [ ${MACHINE} = "myd-y6ull-rhmi" ]
       then
-      install -m 0755 ${S}/board_cfg_mydy6ull-rhmi.json ${D}/usr/share/myir/board_cfg.json
-      install -m 0755 ${S}/board_cfg_mydy6ull-rhmi.json ${D}/usr/share/board_cfg.json
+      install -m 0755 ${S}/board_cfg_myd_y6ull_rhmi.json ${D}/usr/share/myir/board_cfg.json
+      install -m 0755 ${S}/board_cfg_myd_y6ull_rhmi.json ${D}/usr/share/board_cfg.json
       fi
 
       install -m 0755 ${S}/mxde.xml ${D}/usr/share/myir/
