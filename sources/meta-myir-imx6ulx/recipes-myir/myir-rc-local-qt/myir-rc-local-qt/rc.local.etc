@@ -23,6 +23,7 @@ fi
 export DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS"
 
 /home/myir/mxbackend &
+/home/myir/mxapp --platform linuxfb &
 python /usr/share/myir/www/server.py &
 
 

@@ -33,5 +33,7 @@ IMAGE_INSTALL += "imx-kobs \
     libmodbus \
     iptables \
     vsftpd \
+    web-demo \
+    qt-demo \
     wifi-bt-conf \
     myir-rc-local"
