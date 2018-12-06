@@ -8,8 +8,8 @@ PROVIDES += "u-boot"
 LICENSE = "GPLv2+"
 #LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
-SRCBRANCH = "myd-y6ulx-rhmi"
-UBOOT_SRC = "git:////home/hufan/MYiR-iMX-uboot;protocol=file"
+SRCBRANCH = "myd-y6ulx-hmi"
+UBOOT_SRC = "git:////${HOME}/MYiR-iMX-uboot;protocol=file"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
 SRCREV = "7641edceffd28ce4f3122099be50fce2fce16965"
 
