@@ -7,6 +7,10 @@ IMAGE_INSTALL += "imx-kobs \
     mtd-utils \
     mtd-utils-ubifs \
     rpm \
+    wifi-bt-conf \
+    myir-rc-local \
+    ppp \
+    ppp-quectel \
     udev-extraconf \
     udev-rules-imx \
     wpa-supplicant \

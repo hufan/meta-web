@@ -9,7 +9,7 @@ PACKAGES = "${PN}-dbg ${PN} ${PN}-doc ${PN}-dev ${PN}-staticdev ${PN}-locale"
 PACKAGES_DYNAMIC = "${PN}-locale-*"
 
 
-SRCREV = "cf8e678dc6d03efc1381a5dd0d2c70c4a0a74de4"
+SRCREV = "919aaf8c71cb5cb3e94de6f75865c523ed1d1cfa"
 SRC_URI = "  \
             git://github.com/hufan/web-demo-bb;protocol=https;branch=web_server"
 			
@@ -49,7 +49,7 @@ do_install () {
       then
       install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/myir/board_cfg.json
       install -m 0755 ${S}/board_cfg_mysy6ull.json ${D}/usr/share/board_cfg.json
-      elif [ ${MACHINE} = "myd-y6ull-rhmi" ]
+      elif [ ${MACHINE} = "myd-y6ull-hmi" ]
       then
       install -m 0755 ${S}/board_cfg_myd_y6ull_rhmi.json ${D}/usr/share/myir/board_cfg.json
       install -m 0755 ${S}/board_cfg_myd_y6ull_rhmi.json ${D}/usr/share/board_cfg.json

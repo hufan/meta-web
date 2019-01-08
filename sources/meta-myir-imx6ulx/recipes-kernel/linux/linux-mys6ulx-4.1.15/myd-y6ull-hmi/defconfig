@@ -1390,7 +1390,7 @@ CONFIG_PCMCIA_RAYCS=y
 # CONFIG_ATH_CARDS is not set
 # CONFIG_B43 is not set
 # CONFIG_B43LEGACY is not set
-CONFIG_BCMDHD=y
+CONFIG_BCMDHD=m
 CONFIG_BCMDHD_FW_PATH="/lib/firmware/bcmd/fw_bcm43438a1_apsta.bin"
 CONFIG_BCMDHD_NVRAM_PATH="/lib/firmware/bcmd/nvram_ap6212a.txt"
 CONFIG_BCMDHD_SDIO=y

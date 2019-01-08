@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -f "/sys/class/mmc_host/mmc1/device/of_node/wifi-host" ];then
+modprobe bcmdhd
+fi
+
+sleep 3 
 
 source /etc/wifi-conf/basicsh
 
