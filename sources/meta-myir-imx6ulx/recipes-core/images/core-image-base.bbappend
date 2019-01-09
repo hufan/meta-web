@@ -34,6 +34,5 @@ IMAGE_INSTALL += "imx-kobs \
     iptables \
     vsftpd \
     web-demo \
-    qt-demo \
     wifi-bt-conf \
     myir-rc-local"
