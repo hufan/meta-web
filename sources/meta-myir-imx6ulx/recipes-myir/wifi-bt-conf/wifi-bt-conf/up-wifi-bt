@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -f "/sys/class/mmc_host/mmc1/device/of_node/wifi-host" ];then
-modprobe bcmdhd
+modprobe bcmdhd &
 fi
 
 sleep 3 
