@@ -15,7 +15,14 @@ LOCALCONF_VERSION = "1"
 IMX_DEFAULT_DISTRO_FEATURES = "largefile opengl ptest multiarch bluez"
 IMX_DEFAULT_EXTRA_RDEPENDS = "packagegroup-core-boot"
 IMX_DEFAULT_EXTRA_RRECOMMENDS = "kernel-module-af-packet"
-IMAGE_FSTYPES = "tar.bz2 tar.xz ext4 sdcard"
+IMAGE_FSTYPES = "tar.bz2 tar.xz ext4 sdcard ubi"
+
+# Use the expected value of the ubifs filesystem's volume name in the kernel
+UBI_VOLNAME = "rootfs"
+# The biggest NANDs on current modules are 256MB.
+# This sums up to 2048 LEBs available for the ubifs (-c)
+MKUBIFS_ARGS = "-F -m 2048 -e 126976 -c 2048"
+UBINIZE_ARGS = "-m 2048 -p 128KiB -s 2048 -O 2048"
 
 BBMASK = "meta-fsl-arm/recipes-kernel/linux/linux-imx_4.1.15.bb"
 BBMASK .= "|meta-fsl-arm/recipes-kernel/linux/linux-imx-mfgtool_4.1.15.bb"
