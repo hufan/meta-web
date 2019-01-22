@@ -1,38 +1,22 @@
 IMAGE_INSTALL += "imx-kobs \
-    tslib-calibrate \
-    tslib-conf \
-    tslib-tests \
-    bzip2 \
-    gzip \
-    canutils \
-    dosfstools \
-    mtd-utils \
-    mtd-utils-ubifs \
-    ntpdate \
-    vlan \
-    tar \
     net-tools \
     ethtool \
     evtest \
-    i2c-tools \
-    iperf3 \
-    iproute2 \
     iputils \
     udev-extraconf \
     rpm \
-    iperf \
     openssh \
     openssl \
-    v4l-utils \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
-    alsa-utils \
-    ppp \
-    ppp-quectel \
-    hostapd \
-    sqlite3 \
-    libmodbus \
-    iptables \
     vsftpd \
-    web-demo \
+    parted \
+    u-boot-fw-utils \
+    mmc-utils \
+    util-linux-sfdisk \
+    e2fsprogs-mke2fs \
+    e2fsprogs-resize2fs \
+    mtd-utils-ubifs \
     wifi-bt-conf \
+    swupdate \
+    swupdate-www \
     myir-rc-local"

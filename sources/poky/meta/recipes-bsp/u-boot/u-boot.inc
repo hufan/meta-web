@@ -3,10 +3,16 @@ HOMEPAGE = "http://www.denx.de/wiki/U-Boot/WebHome"
 SECTION = "bootloaders"
 PROVIDES = "virtual/bootloader"
 
+#LICENSE = "GPLv2+"
+#LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
+#SRC_URI = "git://git.denx.de/u-boot.git;branch=master"
 LICENSE = "GPLv2+"
-LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
+LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
-SRC_URI = "git://git.denx.de/u-boot.git;branch=master"
+SRCBRANCH = "myd-y6ulx-hmi"
+UBOOT_SRC = "git:////${HOME}/MYiR-iMX-Uboot;protocol=file"
+SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
+SRCREV = "4b094406a0c17db99552ed3631000b9bfd8fee65"
 
 S = "${WORKDIR}/git"
 
