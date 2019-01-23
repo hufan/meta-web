@@ -19,4 +19,7 @@ IMAGE_INSTALL += "imx-kobs \
     wifi-bt-conf \
     swupdate \
     swupdate-www \
+    fw_conf \
+    web-demo \
+    qt-demo \
     myir-rc-local"
