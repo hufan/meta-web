@@ -19,7 +19,13 @@ IMAGE_INSTALL += "imx-kobs \
     wifi-bt-conf \
     swupdate \
     swupdate-www \
-    fw_conf \
+    python-certifi \
+    python-simplejson \
+    python-singledispatch \
+    python-backports-abc \
+    python-pyconnman \
+    python-tornado \
+    fwconf \
     web-demo \
     qt-demo \
     myir-rc-local"
