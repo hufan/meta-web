@@ -58,5 +58,5 @@ IMAGE_INSTALL += " \
     swupdate \
     swupdate-www \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
-    fwconf \
+    fwconf-swupdate \ 
     myir-rc-local-qt"

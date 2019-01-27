@@ -25,7 +25,7 @@ IMAGE_INSTALL += "imx-kobs \
     python-backports-abc \
     python-pyconnman \
     python-tornado \
-    fwconf \
+    fwconf-swupdate \
     web-demo \
     qt-demo \
     myir-rc-local"

@@ -21,6 +21,7 @@ SRC_URI += "\
     file://0007-linux-oe-g-Invert-conditional-for-defining-QT_SOCKLE.patch \
     file://0008-configure-paths-for-target-qmake-properly.patch \
     file://0009-Pretend-Qt5-wasn-t-found-if-OE_QMAKE_PATH_EXTERNAL_H.patch \
+    file://0012-add-qtslib.patch \
 "
 
 DEPENDS += "qtbase-native"
@@ -46,7 +47,8 @@ PACKAGECONFIG_DISTRO ?= ""
 PACKAGECONFIG_RELEASE ?= "release"
 # This is in qt5.inc, because qtwebkit-examples are using it to enable ca-certificates dependency
 # PACKAGECONFIG_OPENSSL ?= "openssl"
-PACKAGECONFIG_DEFAULT ?= "dbus udev evdev tslib  widgets tools libs "
+#PACKAGECONFIG_DEFAULT ?= "dbus udev evdev tslib  widgets tools libs "
+PACKAGECONFIG_DEFAULT ?= "dbus udev  evdev  widgets tools libs tslib"
 
 PACKAGECONFIG ?= " \
     ${PACKAGECONFIG_RELEASE} \

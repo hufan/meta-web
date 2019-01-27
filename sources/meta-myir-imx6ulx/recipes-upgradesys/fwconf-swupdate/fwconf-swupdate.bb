@@ -1,4 +1,4 @@
-# MYIR - 2018   Alex .
+# MYIR - 2019   Alex .
 
 DESCRIPTION = "Extra files for MYiR"
 LICENSE = "LGPLv2"
@@ -13,10 +13,9 @@ SRC_URI = "file://LICENSE \
 S = "${WORKDIR}"
 
 do_install () {
+	    install -d ${D}/${sysconfdir}
 	    install -m 755 ${S}/fw_env.config ${D}/${sysconfdir}
 	    install -m 755 ${S}/hwrevision ${D}/${sysconfdir}
 	    install -m 755 ${S}/sw-versions ${D}/${sysconfdir}
 }
 
-FILES_${PN} = " ${sysconfdir} \
-              "

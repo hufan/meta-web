@@ -1,0 +1,85 @@
+From b601cee6de9c06e2f25ca5ce3fef12d954b268ff Mon Sep 17 00:00:00 2001
+From: hufan <hufan105@163.com>
+Date: Sat, 26 Jan 2019 18:09:37 +0800
+Subject: [PATCH] tslib bug
+
+---
+ src/platformsupport/input/tslib/qtslib.cpp | 48 ++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
+
+diff --git a/src/platformsupport/input/tslib/qtslib.cpp b/src/platformsupport/input/tslib/qtslib.cpp
+index e47d52e..84a29bc 100644
+--- a/src/platformsupport/input/tslib/qtslib.cpp
++++ b/src/platformsupport/input/tslib/qtslib.cpp
+@@ -39,6 +39,8 @@
+ #include <QLoggingCategory>
+ 
+ #include <qpa/qwindowsysteminterface.h>
++#include <QString>
++#include <QPointF>
+ 
+ #include <errno.h>
+ #include <tslib.h>
+@@ -103,6 +105,30 @@ void QTsLibMouseHandler::readMouseData()
+ {
+     ts_sample sample;
+ 
++    QString spec = QString::fromLocal8Bit(qgetenv("TSLIB_PARAMETERS"));
++    int RotateAngle;
++    int Width;
++    int Height;
++    QString ModeArg;
++
++    if(spec.isEmpty()){
++	RotateAngle = 0;
++	Height = 800;
++	Width = 480;
++   }
++
++    QStringList args = spec.split(QLatin1Char(':'));
++    for (int i = 0; i < args.count(); ++i) {
++        if(args.at(i).startsWith(QLatin1String("rotate"))) {
++	   QString rotateArg = args.at(i).section(QLatin1Char('='), 1, 1);
++           RotateAngle = rotateArg.toInt();
++       }
++	else if(args.at(i).startsWith(QLatin1String("mode"))) {
++	   ModeArg = args.at(i).section(QLatin1Char('='), 1, 1);
++	   Width = ModeArg.section(QLatin1Char('x'),0,0).toInt();
++	   Height= ModeArg.section(QLatin1Char('x'),1,1).toInt();
++        }
++    }
+     while (get_sample(m_dev, &sample, m_rawMode)) {
+         bool pressed = sample.pressure;
+         int x = sample.x;
+@@ -123,6 +149,28 @@ void QTsLibMouseHandler::readMouseData()
+         }
+         QPoint pos(x, y);
+ 
++	//Switch to apply rotation
++	switch (RotateAngle) {
++            case 0:
++		pos.setX(x);
++		pos.setY(y);
++		break;
++            case 90:
++		pos.setX(y);
++		pos.setY(Width-x);		
++		break;
++            case 180:
++		pos.setX(Width-x);
++		pos.setY(Height-y);
++		break;
++            case 270:
++		pos.setX(Height-y);
++		pos.setY(x);
++		break;
++            default:
++                break;
++        }
++	
+         QWindowSystemInterface::handleMouseEvent(0, pos, pos, pressed ? Qt::LeftButton : Qt::NoButton);
+ 
+         m_x = x;
+-- 
+2.10.1
+
