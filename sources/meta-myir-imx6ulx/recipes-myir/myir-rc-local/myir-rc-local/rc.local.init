@@ -9,7 +9,12 @@
 ### END INIT INFO
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-up-wifi-bt &
+###mount
+ubiattach /dev/ubi_ctrl -m 6
+ubimkvol /dev/ubi1 -Nrootfs -m
+mkdir -p  /optdata
+mount  -t ubifs ubi1_0 /optdata/
+
 do_start() {
 	if [ -x /etc/rc.local ]; then
 		echo -n "Running local boot scripts (/etc/rc.local)"
