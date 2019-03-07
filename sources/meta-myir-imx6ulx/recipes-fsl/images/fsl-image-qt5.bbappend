@@ -42,14 +42,7 @@ IMAGE_INSTALL += " \
     dbus \
     openobex \
     python-lxml \
-    python-certifi \
     python-simplejson \
-    python-singledispatch \
-    python-backports-abc \
-    python-pyconnman \
-    python-tornado \
-    web-demo \
-    qt-demo \
     hostapd \ 
     iptables \
     vsftpd \ 
