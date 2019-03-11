@@ -2,7 +2,7 @@
 
 DESCRIPTION = "Extra files for MYiR"
 LICENSE = "LGPLv2"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=309cc7bace8769cfabdd34577f654f8e"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=26c59bdf3d7afdce38f7f80f53761d12"
 
 SRC_URI = "file://LICENSE \
 	   file://fw_env.config \
@@ -19,3 +19,7 @@ do_install () {
 	    install -m 755 ${S}/sw-versions ${D}/${sysconfdir}
 }
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+INSANE_SKIP_${PN}-dev = "ldflags"
+INSANE_SKIP_${PN} = "${ERROR_QA} ${WARN_QA}"
+                                             

@@ -6,7 +6,6 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=309cc7bace8769cfabdd34577f654f8e"
 
 SRC_URI = "file://rc.local.etc \
            file://rc.local.init \
-           file://mxbackend \
            file://LICENSE \
             "
 
@@ -22,7 +21,6 @@ do_install () {
     install -d ${D}/home/myir/
     install -m 755 ${S}/rc.local.etc ${D}/${sysconfdir}/rc.local
     install -m 755 ${S}/rc.local.init ${D}/${sysconfdir}/init.d/rc.local
-    install -m 755 ${S}/mxbackend ${D}/home/myir/
 }
 
 FILES_${PN} = " /etc/ \
