@@ -2,7 +2,7 @@
 
 DESCRIPTION = "Extra files for MYiR"
 LICENSE = "LGPLv2"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=26c59bdf3d7afdce38f7f80f53761d12"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=309cc7bace8769cfabdd34577f654f8e"
 
 SRC_URI = "file://LICENSE \
 	   file://fw_env.config \
