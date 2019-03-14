@@ -197,7 +197,6 @@ echo "BBLAYERS += \" \${BSPDIR}/sources/meta-openembedded/meta-filesystems \"" >
 echo "BBLAYERS += \" \${BSPDIR}/sources/meta-qt5 \"" >> $BUILD_DIR/conf/bblayers.conf
 #echo "BBLAYERS += \" \${BSPDIR}/sources/meta-resin \"" >> $BUILD_DIR/conf/bblayers.conf
 echo "BBLAYERS += \" \${BSPDIR}/sources/meta-myir-imx6ulx \"" >> $BUILD_DIR/conf/bblayers.conf
-echo "BBLAYERS += \" \${BSPDIR}/sources/meta-swupdate \"" >> $BUILD_DIR/conf/bblayers.conf
 
 echo BSPDIR=$BSPDIR
 echo BUILD_DIR=$BUILD_DIR

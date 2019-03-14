@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 SRCBRANCH = "myd-y6ulx-hmi"
 UBOOT_SRC = "git:////${HOME}/MYiR-iMX-Uboot;protocol=file"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
-SRCREV = "4b094406a0c17db99552ed3631000b9bfd8fee65"
+SRCREV = "15e14e1cccffe623fff3e51b1b3e31a36dde4285"
 
 S = "${WORKDIR}/git"
 

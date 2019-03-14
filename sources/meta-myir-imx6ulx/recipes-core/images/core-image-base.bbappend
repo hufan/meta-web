@@ -17,7 +17,4 @@ IMAGE_INSTALL += "imx-kobs \
     e2fsprogs-resize2fs \
     mtd-utils-ubifs \
     wifi-bt-conf \
-    swupdate \
-    swupdate-www \
-    fwconf-swupdate \
     myir-rc-local"
