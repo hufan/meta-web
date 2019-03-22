@@ -48,8 +48,5 @@ IMAGE_INSTALL += " \
     vsftpd \ 
     wifi-bt-conf \ 
     openobex \
-    swupdate \
-    swupdate-www \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
-    fwconf-swupdate \ 
     myir-rc-local-qt"

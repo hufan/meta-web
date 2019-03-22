@@ -9,7 +9,6 @@
 ### END INIT INFO
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-up-wifi-bt &
 do_start() {
 	if [ -x /etc/rc.local ]; then
 		echo -n "Running local boot scripts (/etc/rc.local)"
