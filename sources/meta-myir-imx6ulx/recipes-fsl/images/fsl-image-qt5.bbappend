@@ -48,5 +48,8 @@ IMAGE_INSTALL += " \
     vsftpd \ 
     wifi-bt-conf \ 
     openobex \
+    tinyalsa \
+    wifi-bt-conf\ 
+    initscript-telnetd  \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
     myir-rc-local-qt"
