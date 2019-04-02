@@ -1,5 +1,6 @@
 IMAGE_INSTALL += "imx-kobs \
     tslib-calibrate \
+    procps \
     tslib-conf \
     tslib-tests \
     bzip2 \

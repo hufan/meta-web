@@ -1,4 +1,5 @@
 IMAGE_INSTALL += "imx-kobs \
+    procps \
     net-tools \
     ethtool \
     evtest \
