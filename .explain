@@ -1,0 +1,4 @@
+git分支说明：
+	master: MYD-Y6ULX-HMI
+	yocto-mys: MYS-6ULX
+	myd-swupdate: MYD-Y6ULX,添加了swupdate功能，实现在线升级
