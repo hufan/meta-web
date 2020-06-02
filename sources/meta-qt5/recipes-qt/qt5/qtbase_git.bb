@@ -22,6 +22,7 @@ SRC_URI += "\
     file://0008-configure-paths-for-target-qmake-properly.patch \
     file://0009-Pretend-Qt5-wasn-t-found-if-OE_QMAKE_PATH_EXTERNAL_H.patch \
     file://0012-add-qtslib.patch \
+    file://0001-feat-qt5.6-rotate.patch \
 "
 
 DEPENDS += "qtbase-native"
