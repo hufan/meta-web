@@ -2,7 +2,7 @@ DESCRIPTION = "Freescale Image - Adds Qt5"
 LICENSE = "MIT"
 inherit populate_sdk_qt5
 
-require recipes-fsl/images/fsl-image-qt5-validation-imx.bb
+#require recipes-fsl/images/fsl-image-qt5-validation-imx.bb
 
 IMAGE_FEATURES += "package-management ssh-server-dropbear "
 
@@ -38,23 +38,11 @@ IMAGE_INSTALL += " \
     ppp-quectel \
     sqlite3 \
     libmodbus \
-    libxml2 \
     dbus \
-    openobex \
-    python-lxml \
-    python-certifi \
-    python-simplejson \
-    python-singledispatch \
-    python-backports-abc \
-    python-pyconnman \
-    python-tornado \
-    web-demo \
-    qt-demo \
     hostapd \ 
     iptables \
     vsftpd \ 
-    tinyalsa \
     wifi-bt-conf\ 
     initscript-telnetd  \
     ${@base_contains("MACHINE", "mys6ull14x14", "rtl8188eu-driver", "", d)} \
-    myir-rc-local-qt"
+    myir-rc-local"
