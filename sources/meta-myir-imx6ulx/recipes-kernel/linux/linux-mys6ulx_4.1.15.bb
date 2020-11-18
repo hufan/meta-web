@@ -11,9 +11,9 @@ require recipes-kernel/linux/linux-dtb.inc
 DEPENDS += "lzop-native bc-native"
 
 LOCALVERSION = "-1.2.0"
-SRCREV = "e36223d68e5eef88ac91abd71cbaf2ff366626c5"
-SRCBRANCH = "myd-y6ulx-hmi"
-SRC_URI = "git:///${HOME}/MYiR-iMX-Linux;protocol=file;branch=${SRCBRANCH} \
+SRCREV = "76722d70a8ced9375036fb0a43380001a0f5e12c"
+SRCBRANCH = "ODM-SDS-imx6ull"
+SRC_URI = "git:////media/hufan/ODM-SDS/MYiR-iMX-Linux;protocol=file;branch=${SRCBRANCH} \
            file://defconfig \ 
         "
 
